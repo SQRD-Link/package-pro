@@ -64,27 +64,27 @@ const PACKAGES = {
     name: 'Webhosting',
     tiers: ['Start', 'Medium', 'Power'],
     notes: {
-      Start: '1 website, 5 GB, free migration from Medium+',
-      Medium: 'Up to 3 websites, 10 GB, unlimited email',
-      Power: 'Unlimited websites, 25 GB, priority support'
+      Start: '2 websites, 5 GB, 10 email addresses',
+      Medium: 'Up to 5 websites, 50 GB, 50 email addresses',
+      Power: '10 websites, 100 GB, unlimited email'
     }
   },
   email: {
     name: 'Email Hosting',
     tiers: ['Start', 'Medium', 'Power'],
     notes: {
-      Start: '5 mailboxes, 5 GB',
-      Medium: '15 mailboxes, 15 GB',
-      Power: 'Unlimited mailboxes, 30 GB'
+      Start: '10 mailboxes, 5 GB',
+      Medium: '50 mailboxes, 50 GB',
+      Power: 'Unlimited mailboxes, 100 GB'
     }
   },
   wordpress: {
     name: 'Managed WordPress',
     tiers: ['Start', 'Medium', 'Power'],
     notes: {
-      Start: '1 site, auto-updates, daily backups',
-      Medium: 'Up to 3 sites, staging environment',
-      Power: 'Unlimited sites, priority support'
+      Start: '2 sites, auto-updates, daily backups',
+      Medium: 'Up to 5 sites, staging environment',
+      Power: '10 sites, priority support'
     }
   },
   woocommerce: {
@@ -100,9 +100,9 @@ const PACKAGES = {
     name: 'Managed VPS',
     tiers: ['Start', 'Medium', 'Power'],
     notes: {
-      Start: '2 vCPU, 4 GB RAM, 50 GB SSD',
-      Medium: '4 vCPU, 8 GB RAM, 100 GB SSD',
-      Power: '8 vCPU, 16 GB RAM, 200 GB SSD'
+      Start: '3 vCPU, 6 GB RAM, 50 GB SSD',
+      Medium: '6 vCPU, 12 GB RAM, 100 GB SSD',
+      Power: '8 vCPU, 24 GB RAM, 200 GB SSD'
     }
   }
 };
@@ -153,16 +153,16 @@ const CASES = {
           <div class="theory-box">
             <h4>📦 The Product Lines</h4>
             <p>Cloud86 offers five core product lines, each available in Start / Medium / Power:</p>
-            <p><strong style="color:var(--amber)">Webhosting</strong> — Classic shared hosting. Great for any kind of website. Start = 1 site, Medium = up to 3 sites, Power = unlimited.</p>
-            <p><strong style="color:var(--amber)">Managed WordPress</strong> — WordPress-specific hosting with auto-updates, staging, and daily backups. Same 1/3/unlimited structure as Webhosting.</p>
+            <p><strong style="color:var(--amber)">Webhosting</strong> — Classic shared hosting. Great for any kind of website. Start = 2 sites, Medium = up to 5 sites, Power = 10 sites.</p>
+            <p><strong style="color:var(--amber)">Managed WordPress</strong> — WordPress-specific hosting with auto-updates, staging, and daily backups. Same 2/5/10 structure as Webhosting.</p>
             <p><strong style="color:var(--amber)">Managed WooCommerce</strong> — Like Managed WordPress, but optimized for webshops. Start = up to 50 products.</p>
-            <p><strong style="color:var(--amber)">Email Hosting</strong> — Email-only hosting. 5 / 15 / unlimited mailboxes.</p>
+            <p><strong style="color:var(--amber)">Email Hosting</strong> — Email-only hosting. 10 / 50 / unlimited mailboxes.</p>
             <p><strong style="color:var(--amber)">Managed VPS</strong> — Virtual private server. Used for high-traffic sites, developers, or customers needing full control.</p>
           </div>
           <div class="theory-box">
-            <h4>🔑 The Key Rule: Multiple Websites → Medium Minimum</h4>
-            <p>Webhosting Start and Managed WordPress Start only support <strong style="color:var(--red)">one website</strong>. If a customer has 2 or more websites, they need at least a <strong style="color:var(--amber)">Medium</strong> package (up to 3 sites) or <strong style="color:var(--amber)">Power</strong> (unlimited).</p>
-            <p>For Martijn: three WordPress sites → Managed WordPress Medium (3 sites max) or Power (unlimited). Medium is the minimum that fits.</p>
+            <h4>🔑 The Key Rule: Multiple Websites → Right Tier</h4>
+            <p>Webhosting Start and Managed WordPress Start support <strong style="color:var(--red)">up to 2 websites</strong>. If a customer has 3 or more websites, they need at least a <strong style="color:var(--amber)">Medium</strong> package (up to 5 sites) or <strong style="color:var(--amber)">Power</strong> (10 sites).</p>
+            <p>For Martijn: three WordPress sites → Managed WordPress Medium (5 sites max) or Power (10 sites). Medium is the minimum that fits.</p>
           </div>
           <div class="clue-box">
             <span class="clue-icon">💡</span>
@@ -184,20 +184,20 @@ const CASES = {
           },
           {
             q: 'Within that product line, which tier does Martijn need at minimum?',
-            options: ['Start (1 website)', 'Medium (up to 3 websites)', 'Power (unlimited websites)', 'He needs 3 separate Start packages'],
+            options: ['Start (up to 2 websites)', 'Medium (up to 5 websites)', 'Power (up to 10 websites)', 'He needs 3 separate Start packages'],
             correct: 1,
-            feedback: 'Correct! Medium supports up to 3 websites — exactly what Martijn has. Start only supports 1, so it\'s not an option. Power would work too but is more than needed for now.'
+            feedback: 'Correct! Medium supports up to 5 websites — more than enough for Martijn\'s 3 sites. Start only supports 2, so it\'s not an option. Power (10 sites) would also work but is more than needed for now.'
           },
           {
             q: 'The customer asks: "Can I start with Start and upgrade later?" What do you tell him?',
             options: [
               'Yes, and all 3 sites can be added to Start',
               'No, upgrading is not possible with Cloud86',
-              'Yes, but Start only supports 1 site — he\'d need to upgrade to Medium before adding site 2 or 3',
+              'Yes, but Start only supports 2 sites — he\'d need to upgrade to Medium before adding site 3',
               'He should buy 3 separate Start packages'
             ],
             correct: 2,
-            feedback: 'Correct. Upgrades are always possible, but Start won\'t support more than 1 site. If he wants all 3 from day one, Medium is the right starting point. If he\'s starting with just one site, Start is fine — but upgrading before adding more is required.'
+            feedback: 'Correct. Upgrades are always possible, but Start won\'t support more than 2 sites. If he wants all 3 from day one, Medium is the right starting point. If he\'s starting with just 1 or 2 sites, Start is fine — but upgrading before adding site 3 is required.'
           }
         ]
       },
@@ -212,7 +212,7 @@ const CASES = {
           answer: `
             <strong>Recommended: Managed WooCommerce Medium</strong><br><br>
             The WooCommerce webshop determines the product line — Managed WooCommerce is optimized for WooCommerce with performance tuning and specific backup/restore features for shop data.<br><br>
-            <strong>Why Medium?</strong> Same 3-site limit applies. Medium supports up to 3 websites and up to 500 products (more than enough for 200).<br><br>
+            <strong>Why Medium?</strong> Same 5-site limit applies. Medium supports up to 5 websites and up to 500 products (more than enough for 200). 3 websites fit comfortably within Medium (up to 5 sites). With a WooCommerce shop and 2 other WordPress sites, they have room to grow. They'd only need Power if they exceed 5 sites.<br><br>
             <strong>Why not Managed WordPress Medium?</strong> Managed WordPress supports WooCommerce, but Managed WooCommerce is the better fit when the primary use case is a webshop. Use the most specific product that covers the use case.
           `
         }
@@ -261,7 +261,7 @@ const CASES = {
           <div class="theory-box">
             <h4>✅ What Anita needs</h4>
             <p>1 website (static or simple CMS) · No webshop · 2 email addresses</p>
-            <p>This maps cleanly to <strong style="color:var(--amber)">Webhosting Start</strong>: supports 1 website, includes 5 GB storage and email hosting.</p>
+            <p>This maps cleanly to <strong style="color:var(--amber)">Webhosting Start</strong>: supports 2 websites, includes 5 GB storage and email hosting (10 mailboxes).</p>
             <p>Managed WordPress would also work if she builds on WordPress — but it's not necessary if she's using a simpler builder or static HTML.</p>
           </div>
           <div class="theory-box">
@@ -285,12 +285,12 @@ const CASES = {
             q: 'Anita needs 1 website and 2 email addresses. She\'s building from scratch (no migration). What\'s the right recommendation?',
             options: [
               'Webhosting Medium — more room to grow',
-              'Webhosting Start — 1 site, includes email, no migration needed',
+              'Webhosting Start — 2 sites, includes email, no migration needed',
               'Email Hosting Start + Webhosting Start — separate packages for email and web',
               'Managed WordPress Start — best for small businesses'
             ],
             correct: 1,
-            feedback: 'Correct. Webhosting Start covers exactly what she needs: 1 website and email hosting included. Medium would work but adds cost without benefit. Separate email hosting is unnecessary since webhosting already includes it.'
+            feedback: 'Correct. Webhosting Start covers exactly what she needs: up to 2 websites and email hosting included. Medium would work but adds cost without benefit. Separate email hosting is unnecessary since webhosting already includes it.'
           },
           {
             q: 'Anita calls back and says she wants to add a small webshop later (under 20 products). Does this change your recommendation now?',
@@ -381,7 +381,7 @@ const CASES = {
           </div>
           <div class="clue-box">
             <span class="clue-icon">💡</span>
-            <div class="clue-text"><strong>Staging solves his developer's problem too:</strong> Managed WooCommerce Medium and Power include staging environments. His developer can push updates safely to staging before the live shop — exactly what they need.</div>
+            <div class="clue-text"><strong>Staging solves his developer\'s problem too:</strong> Managed WooCommerce Medium and Power include staging environments. His developer can push updates safely to staging before the live shop — exactly what they need.</div>
           </div>
         `
       },
@@ -476,7 +476,7 @@ const CASES = {
           <div class="theory-box">
             <h4>📧 Email Hosting — The Dedicated Email Product</h4>
             <p>Cloud86\'s <strong style="color:var(--amber)">Email Hosting</strong> is a standalone product for customers who need email hosting without website hosting.</p>
-            <p>Tiers: <strong style="color:var(--teal-bright)">Start</strong> (5 mailboxes, 5 GB), <strong style="color:var(--teal-bright)">Medium</strong> (15 mailboxes, 15 GB), <strong style="color:var(--teal-bright)">Power</strong> (unlimited mailboxes, 30 GB).</p>
+            <p>Tiers: <strong style="color:var(--teal-bright)">Start</strong> (10 mailboxes, 5 GB), <strong style="color:var(--teal-bright)">Medium</strong> (50 mailboxes, 50 GB), <strong style="color:var(--teal-bright)">Power</strong> (unlimited mailboxes, 100 GB).</p>
           </div>
           <div class="theory-box">
             <h4>🔄 Email Hosting vs Email in Webhosting</h4>
@@ -487,7 +487,7 @@ const CASES = {
           </div>
           <div class="clue-box">
             <span class="clue-icon">💡</span>
-            <div class="clue-text"><strong>For Sandra:</strong> 9 mailboxes. Email Hosting Start supports 5 mailboxes — not enough. Email Hosting Medium supports 15 mailboxes — that fits with room to grow.</div>
+            <div class="clue-text"><strong>For Sandra:</strong> 9 mailboxes. Email Hosting Start supports 10 mailboxes — it technically fits, but Medium (50 mailboxes) gives far more room to grow and is the smarter choice for a business.</div>
           </div>
         `
       },
@@ -509,10 +509,10 @@ const CASES = {
             feedback: 'Correct. Email Hosting is the right product when a customer only needs email without website hosting. It\'s more cost-effective than Webhosting for this use case since she\'s not paying for web server resources she doesn\'t need.'
           },
           {
-            q: 'Email Hosting Start = 5 mailboxes, Medium = 15 mailboxes, Power = unlimited. Sandra needs 9. Which tier?',
-            options: ['Start (5 mailboxes — not enough, but she can squeeze)', 'Medium (15 mailboxes — fits with room to grow)', 'Power (unlimited — safest choice)', 'Two Start packages'],
+            q: 'Email Hosting Start = 10 mailboxes, Medium = 50 mailboxes, Power = unlimited. Sandra needs 9. Which tier?',
+            options: ['Start (10 mailboxes — just fits now, little room to grow)', 'Medium (50 mailboxes — plenty of room to grow)', 'Power (unlimited — safest choice)', 'Two Start packages'],
             correct: 1,
-            feedback: 'Correct. Medium (15 mailboxes) comfortably fits 9 with room to grow. Power would also work but is more than needed. Start is definitively not enough at only 5 mailboxes.'
+            feedback: 'Good choice. Medium (50 mailboxes) gives lots of room to grow for a 9-mailbox business. Start (10 mailboxes) technically fits now but leaves almost no headroom. Power is overkill for this size. For a growing business, Medium is the right recommendation.'
           },
           {
             q: 'Sandra asks: "Our web agency uses DNS. Do we need to do anything at Cloud86 for email to work?" What do you tell her?',
@@ -534,12 +534,12 @@ const CASES = {
         subtitle: 'When the customer already has hosting but needs more mailboxes.',
         scenario: {
           title: 'Scenario: Existing Webhosting customer, outgrowing email',
-          text: 'A customer is on Webhosting Medium (15-mailbox limit included). They\'ve grown to 18 employees and need 18 mailboxes. They don\'t want to change their website hosting. What do you recommend?',
+          text: 'A customer is on Webhosting Medium (50-mailbox limit included). They\'ve grown to 55 employees and need 55 mailboxes. They don\'t want to change their website hosting. What do you recommend?',
           answer: `
             <strong>Option 1: Upgrade Webhosting to Power</strong><br>
             Webhosting Power includes unlimited mailboxes. If they\'re also close to the website or storage limits, this makes sense.<br><br>
-            <strong>Option 2: Add Email Hosting Medium or Power</strong><br>
-            If they want to keep their Webhosting Medium and add more mailboxes separately, they can add a standalone Email Hosting plan for the additional inboxes.<br><br>
+            <strong>Option 2: Add Email Hosting Power</strong><br>
+            If they want to keep their Webhosting Medium and add more mailboxes separately, they can add a standalone Email Hosting Power plan for the additional inboxes.<br><br>
             <strong>Best recommendation:</strong> Ask if they\'re hitting other limits on Webhosting Medium (storage, sites). If not, upgrading to Power just for email is overkill — adding a separate Email Hosting plan is more surgical and cost-effective.
           `
         }
@@ -695,14 +695,14 @@ const CASES = {
           <div class="theory-box">
             <h4>🏢 The Agency Use Case</h4>
             <p>Agencies have a fundamentally different need than individual site owners: they need to add and remove sites without package restructuring.</p>
-            <p><strong style="color:var(--amber)">Webhosting Start</strong> — 1 site. Not relevant for agencies.</p>
-            <p><strong style="color:var(--amber)">Webhosting Medium</strong> — up to 3 sites. Agencies outgrow this immediately.</p>
-            <p><strong style="color:var(--amber)">Webhosting Power / Managed WordPress Power</strong> — <strong style="color:var(--green)">unlimited sites</strong>. This is the agency tier.</p>
+            <p><strong style="color:var(--amber)">Webhosting Start</strong> — 2 sites. Not relevant for agencies.</p>
+            <p><strong style="color:var(--amber)">Webhosting Medium</strong> — up to 5 sites. Agencies outgrow this quickly.</p>
+            <p><strong style="color:var(--amber)">Webhosting Power / Managed WordPress Power</strong> — <strong style="color:var(--green)">10 sites</strong>. Better for agencies, though very large agencies may need multiple Power packages or a VPS.</p>
           </div>
           <div class="theory-box">
             <h4>📊 Why Power is more cost-effective for agencies</h4>
-            <p>An agency with 15 sites would need 5 separate Medium packages to host all sites within limits. One Power package costs less and handles them all — plus every future client site.</p>
-            <p>For a WordPress agency: <strong style="color:var(--amber)">Managed WordPress Power</strong> — unlimited sites, staging environments for each client, auto-updates across all sites, and one support contact for all issues.</p>
+            <p>An agency with 15 sites would need 3 separate Medium packages to host all sites within limits. One Power package handles 10 — for 15 sites, consider 2 Power packages or a VPS discussion.</p>
+            <p>For a WordPress agency: <strong style="color:var(--amber)">Managed WordPress Power</strong> — 10 sites per package, staging environments, auto-updates across all sites, and one support contact for all issues.</p>
           </div>
           <div class="clue-box">
             <span class="clue-icon">💡</span>
@@ -719,24 +719,24 @@ const CASES = {
           {
             q: 'Joris manages 15 WordPress client sites with plans to add more. What\'s the correct product and tier?',
             options: [
-              'Webhosting Medium × 5 packages (3 sites each)',
-              'Managed WordPress Power — unlimited WordPress sites, one package',
-              'Managed WordPress Medium × 5 packages',
+              'Webhosting Medium × 3 packages (5 sites each)',
+              'Managed WordPress Power — best WordPress package, up to 10 sites per package',
+              'Managed WordPress Medium × 3 packages',
               'Managed VPS — agencies need dedicated servers'
             ],
             correct: 1,
-            feedback: 'Correct. Managed WordPress Power with unlimited sites is purpose-built for this scenario. One package, unlimited client sites, staging for each, auto-updates — and lower total cost than managing multiple Medium packages.'
+            feedback: 'Correct. Managed WordPress Power is purpose-built for agency scenarios. For 15 sites, Joris would need 2 Power packages (10 sites each) — still more cost-effective and manageable than many Medium packages, and Power includes staging for all sites plus auto-updates.'
           },
           {
             q: 'Joris asks: "Can I host multiple client domains under one account?" What do you say?',
             options: [
               'No — each client needs their own Cloud86 account',
-              'Yes — Power tier plans support unlimited domains and websites under one account',
+              'Yes — Power tier plans support multiple domains and websites under one account',
               'Yes, but only for websites on the same TLD (.nl only)',
               'Only if all clients have the same hosting plan'
             ],
             correct: 1,
-            feedback: 'Correct. Power tier plans support unlimited domains. Joris can manage all client domains and websites through a single Cloud86 account, which is exactly the agency workflow Cloud86 supports.'
+            feedback: 'Correct. Power tier plans support multiple domains. Joris can manage all client domains and websites through a single Cloud86 account, which is exactly the agency workflow Cloud86 supports.'
           },
           {
             q: 'A client of Joris has a large WooCommerce shop with 300 products. Can this be hosted under the same Managed WordPress Power plan?',
@@ -758,15 +758,14 @@ const CASES = {
         subtitle: 'A smaller agency — does the math still work out to Power?',
         scenario: {
           title: 'Scenario: Freelancer with 4 client sites',
-          text: 'A freelance web developer manages 4 client WordPress sites. They\'re considering Managed WordPress Medium (3 sites) × 2 packages vs. one Managed WordPress Power. What do you recommend, and why?',
+          text: 'A freelance web developer manages 4 client WordPress sites. They\'re considering Managed WordPress Medium (5 sites) × 1 package vs. one Managed WordPress Power (10 sites). What do you recommend, and why?',
           answer: `
-            <strong>Recommended: Managed WordPress Power (single package)</strong><br><br>
-            Even with only 4 sites today, the Power plan is almost always the better choice for a developer managing client sites because:<br><br>
-            1. <strong>Cost</strong> — 2× Medium packages likely costs more than 1× Power<br>
-            2. <strong>Scalability</strong> — adding a 5th or 6th client requires another Medium or an upgrade; Power never requires this<br>
-            3. <strong>Management</strong> — one dashboard, one support contract, one invoice<br>
-            4. <strong>Staging</strong> — Power includes staging for all sites, Medium includes it too but you\'re managing 2 separate accounts<br><br>
-            The breakeven is typically 3–4 sites. At 4 sites, Power is already the smarter choice for anyone with growth plans.
+            <strong>Recommended: Managed WordPress Medium (single package) for now, Power when they grow</strong><br><br>
+            With only 4 sites today, Medium (5 sites) is sufficient and more cost-effective. However, Power becomes the better choice when:<br><br>
+            1. <strong>Growth</strong> — if they expect to reach 6+ sites soon, Power from the start avoids an upgrade<br>
+            2. <strong>Staging needs</strong> — both Medium and Power include staging, so this isn't the differentiator<br>
+            3. <strong>Cost</strong> — for 4 sites, Medium is the right-sized package<br><br>
+            The breakeven is typically around 5-6 sites. At 4 sites, Medium is appropriate. Recommend Power when they're at or near the 5-site limit and planning to add more clients.
           `
         }
       }
@@ -826,9 +825,9 @@ const CASES = {
           </div>
           <div class="theory-box">
             <h4>🖥 Managed VPS Tiers</h4>
-            <p><strong style="color:var(--teal-bright)">Start</strong> — 2 vCPU, 4 GB RAM, 50 GB SSD</p>
-            <p><strong style="color:var(--teal-bright)">Medium</strong> — 4 vCPU, 8 GB RAM, 100 GB SSD</p>
-            <p><strong style="color:var(--teal-bright)">Power</strong> — 8 vCPU, 16 GB RAM, 200 GB SSD</p>
+            <p><strong style="color:var(--teal-bright)">Start</strong> — 3 vCPU, 6 GB RAM, 50 GB SSD</p>
+            <p><strong style="color:var(--teal-bright)">Medium</strong> — 6 vCPU, 12 GB RAM, 100 GB SSD</p>
+            <p><strong style="color:var(--teal-bright)">Power</strong> — 8 vCPU, 24 GB RAM, 200 GB SSD</p>
             <p>For a WooCommerce shop with 10-15× traffic spikes: <strong style="color:var(--amber)">Managed VPS Medium</strong> is a solid starting point. VPS Start may not have enough RAM for WooCommerce under load.</p>
           </div>
         `
@@ -854,12 +853,12 @@ const CASES = {
             q: 'Which Managed VPS tier would you start with for a WooCommerce shop with 10-15× traffic spikes?',
             options: [
               'VPS Start — cheapest option, can always upgrade',
-              'VPS Medium — 4 vCPU and 8 GB RAM is a solid baseline for WooCommerce under load',
+              'VPS Medium — 6 vCPU and 12 GB RAM is a solid baseline for WooCommerce under load',
               'VPS Power — never compromise on VPS size',
               'She needs a dedicated server, not a VPS'
             ],
             correct: 1,
-            feedback: 'Correct. VPS Medium (4 vCPU, 8 GB RAM) is the right starting point. WooCommerce is resource-intensive, and VPS Start (2 vCPU, 4 GB) might not handle large traffic spikes with complex product catalogs and order processing. Medium provides a meaningful headroom for spikes.'
+            feedback: 'Correct. VPS Medium (6 vCPU, 12 GB RAM) is the right starting point. WooCommerce is resource-intensive, and VPS Start (3 vCPU, 6 GB) might not handle large traffic spikes with complex product catalogs and order processing. Medium provides meaningful headroom for spikes.'
           },
           {
             q: 'Roos asks: "Can I go back to Managed WooCommerce after Black Friday to save money?" What do you say?',
@@ -1059,7 +1058,7 @@ const CASES = {
           <div class="theory-box">
             <h4>🔍 The Staging Requirement</h4>
             <p>Lars explicitly needs staging. This rules out Managed WordPress Start (no staging). He needs at minimum <strong style="color:var(--amber)">Managed WordPress Medium</strong>.</p>
-            <p>Medium vs Power: Lars has 1 production site (dagelijksnieuws.nl). Medium supports up to 3 sites — so Medium is sufficient for site count. But the traffic peaks (25k/day) may be a concern.</p>
+            <p>Medium vs Power: Lars has 1 production site (dagelijksnieuws.nl). Medium supports up to 5 sites — so Medium is more than sufficient for site count. But the traffic peaks (25k/day) may be a concern.</p>
           </div>
           <div class="theory-box">
             <h4>🖥 When Managed WordPress isn\'t Enough</h4>
@@ -1081,7 +1080,7 @@ const CASES = {
             feedback: 'Correct. Managed WordPress is purpose-built for exactly this: editorial teams, staging environments, auto-updates, and WordPress-optimized performance. Webhosting Power works but lacks the WordPress-specific tooling.'
           },
           {
-            q: 'Managed WordPress Start has no staging. Medium supports staging and up to 3 sites. Lars has 1 site and needs staging. What\'s the minimum tier?',
+            q: 'Managed WordPress Start has no staging. Medium supports staging and up to 5 sites. Lars has 1 site and needs staging. What\'s the minimum tier?',
             options: [
               'Start — staging can be added as an addon',
               'Medium — minimum tier that includes staging',
@@ -1089,7 +1088,7 @@ const CASES = {
               'He needs a VPS for staging'
             ],
             correct: 1,
-            feedback: 'Correct. Staging is included from Medium onwards. Start doesn\'t include staging, so it\'s not an option given Lars\'s requirements. Medium is the minimum, and it comfortably supports 1 site.'
+            feedback: 'Correct. Staging is included from Medium onwards. Start doesn\'t include staging, so it\'s not an option given Lars\'s requirements. Medium is the minimum, and it easily supports 1 to 5 sites.'
           },
           {
             q: 'Lars says peaks of 25,000 visitors/day sometimes still cause slowdowns on his current host. Should you recommend VPS over Managed WordPress?',
@@ -1120,7 +1119,7 @@ const CASES = {
             2. Custom caching configurations require server-level access<br>
             3. Development team needs SSH and server control<br>
             4. The scale and custom requirements exceed what managed WordPress hosting is designed for<br><br>
-            <strong>VPS tier:</strong> Start with Managed VPS Power (8 vCPU, 16 GB RAM) as a baseline. A national news site should also discuss load balancing and CDN solutions at this scale.
+            <strong>VPS tier:</strong> Start with Managed VPS Power (8 vCPU, 24 GB RAM) as a baseline. A national news site should also discuss load balancing and CDN solutions at this scale.
           `
         }
       }
@@ -1167,8 +1166,8 @@ const CASES = {
         content: `
           <div class="theory-box">
             <h4>📦 The Package Decision</h4>
-            <p>Iris needs email hosting for 12 mailboxes, no website. That\'s <strong style="color:var(--amber)">Email Hosting Medium</strong> (15 mailboxes, 15 GB) — fits with room to grow.</p>
-            <p>Email Hosting Power (unlimited, 30 GB) would also work and gives more storage — relevant if some mailboxes have years of accumulated email.</p>
+            <p>Iris needs email hosting for 12 mailboxes, no website. That\'s <strong style="color:var(--amber)">Email Hosting Medium</strong> (50 mailboxes, 50 GB) — fits with plenty of room to grow.</p>
+            <p>Email Hosting Power (unlimited, 100 GB) would also work and gives even more storage — relevant if some mailboxes have years of accumulated email.</p>
           </div>
           <div class="theory-box">
             <h4>⚠️ Migration Reality: Email History</h4>
@@ -1193,12 +1192,12 @@ const CASES = {
             q: 'Iris needs 12 mailboxes, no website hosting, migrating from Microsoft 365. Which product and tier?',
             options: [
               'Webhosting Medium — includes email and is more flexible',
-              'Email Hosting Medium — 15 mailboxes, no website resources needed',
-              'Email Hosting Start — 5 mailboxes (she can add later)',
+              'Email Hosting Medium — 50 mailboxes, no website resources needed',
+              'Email Hosting Start — 10 mailboxes (just barely fits now)',
               'Managed VPS — for Microsoft 365 compatibility'
             ],
             correct: 1,
-            feedback: 'Correct. Email Hosting Medium (15 mailboxes) is the right fit for 12 mailboxes with no website hosting. Start (5 mailboxes) is definitively not enough. Webhosting Medium works but includes web server resources she doesn\'t need and costs more.'
+            feedback: 'Correct. Email Hosting Medium (50 mailboxes) is the right fit for 12 mailboxes with no website hosting. Start (10 mailboxes) technically fits but is very tight — a poor recommendation for a business. Webhosting Medium works but includes web server resources she doesn\'t need and costs more.'
           },
           {
             q: 'Iris asks: "Can we keep all our email history from Microsoft 365?" What\'s the most accurate answer?',
@@ -1236,8 +1235,8 @@ const CASES = {
             <strong>Recommended: Managed WooCommerce Medium</strong><br><br>
             Here\'s the reasoning:<br><br>
             <strong>Why Managed WooCommerce, not Managed WordPress?</strong> One of the 3 sites is a WooCommerce shop (150 products). The presence of WooCommerce makes Managed WooCommerce the more appropriate product line — it\'s optimized for WooCommerce specifically.<br><br>
-            <strong>Why Medium?</strong> 3 websites fit within Medium (up to 3 sites). With a WooCommerce shop and 2 other WordPress sites, they\'re at the exact Medium limit. If they plan to add a 4th site, they\'d need Power.<br><br>
-            <strong>Email:</strong> All Webhosting/Managed plans include email. 20 staff mailboxes fit within Medium\'s included email capacity. No separate Email Hosting plan needed.<br><br>
+            <strong>Why Medium?</strong> 3 websites fit comfortably within Medium (up to 5 sites). With a WooCommerce shop and 2 other WordPress sites, they have room to grow. They\'d only need Power if they exceed 5 sites.<br><br>
+            <strong>Email:</strong> All Webhosting/Managed plans include email. 20 staff mailboxes — check whether Medium\'s included email capacity covers this (Managed WooCommerce Medium includes unlimited email from Medium tier). No separate Email Hosting plan needed.<br><br>
             <strong>Migration:</strong> Free migration is included from Medium onwards (up to 5 sites) — all 3 sites qualify.<br><br>
             <strong>Alternative to consider:</strong> If they expect to add more client sites (this is an agency after all), Managed WooCommerce Power might be the smarter long-term investment. Ask about their growth plans before finalizing.
           `
