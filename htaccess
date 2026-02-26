@@ -1,0 +1,8 @@
+<RequireAll>
+    Require all granted
+    
+    # List allowed IPs below
+    Require ip 45.82.189.7
+    Require ip 24.132.196.107
+
+</RequireAll>
