@@ -64,18 +64,18 @@ const PACKAGES = {
     name: 'Webhosting',
     tiers: ['Start', 'Medium', 'Power'],
     notes: {
-      Start: '1 website, 5 GB, free migration from Medium+',
-      Medium: 'Up to 5 websites, 50 GB, unlimited email',
-      Power: 'Unlimited websites, 25 GB, priority support'
+      Start: '2 websites, 5 GB NVMe SSD, 10 email addresses (no free migration)',
+      Medium: 'Up to 5 websites, 50 GB NVMe SSD, 50 email addresses',
+      Power: '10 websites, 100 GB NVMe SSD, unlimited email'
     }
   },
   email: {
     name: 'Email Hosting',
     tiers: ['Start', 'Medium', 'Power'],
     notes: {
-      Start: '10 mailboxes, 5 GB',
-      Medium: '50 mailboxes, 50 GB',
-      Power: 'Unlimited mailboxes, 30 GB'
+      Start: '10 mailboxes, 5 GB NVMe SSD',
+      Medium: '50 mailboxes, 50 GB NVMe SSD',
+      Power: 'Unlimited mailboxes, 100 GB NVMe SSD'
     }
   },
   wordpress: {
@@ -84,7 +84,7 @@ const PACKAGES = {
     notes: {
       Start: '2 sites, auto-updates, daily backups',
       Medium: 'Up to 5 sites, staging environment',
-      Power: 'Unlimited sites, priority support'
+      Power: '10 sites, staging, auto-updates, priority support'
     }
   },
   woocommerce: {
@@ -534,7 +534,7 @@ const CASES = {
         subtitle: 'When the customer already has hosting but needs more mailboxes.',
         scenario: {
           title: 'Scenario: Existing Webhosting customer, outgrowing email',
-          text: 'A customer is on Webhosting Medium (15-mailbox limit included). They\'ve grown to 18 employees and need 18 mailboxes. They don\'t want to change their website hosting. What do you recommend?',
+          text: 'A customer is on Webhosting Medium (50-mailbox limit included). They\'ve grown to 48 employees and need 48 mailboxes. They don\'t want to change their website hosting. What do you recommend?',
           answer: `
             <strong>Option 1: Upgrade Webhosting to Power</strong><br>
             Webhosting Power includes unlimited mailboxes. If they\'re also close to the website or storage limits, this makes sense.<br><br>

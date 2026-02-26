@@ -1,0 +1,407 @@
+{
+  "version": "1.5.0",
+  "last_updated": "2025-06-05",
+  "pricing_currency": "EUR",
+  "pricing_vat_statement": "All prices are exclusive of BTW / VAT.",
+  "general_info": {
+    "invoice_upgrade_link": "https://my.cloud86.io/clientarea.php",
+    "overview_links": {
+      "default_language": "en",
+      "webhosting": {
+        "nl": "https://cloud86.nl/webhosting",
+        "de": "https://cloud86.io/de/webhosting",
+        "en": "https://cloud86.io/webhosting"
+      },
+      "email_hosting": {
+        "nl": "https://cloud86.nl/email-hosting",
+        "de": "https://cloud86.io/de/email-hosting",
+        "en": "https://cloud86.io/email-hosting"
+      },
+      "managed_wordpress": {
+        "nl": "https://cloud86.nl/managed-wordpress-hosting/",
+        "de": "https://cloud86.io/de/managed-wordpress-hosting/",
+        "en": "https://cloud86.io/managed-wordpress-hosting/"
+      },
+      "woocommerce": {
+        "nl": "https://cloud86.nl/woocommerce-hosting/",
+        "de": "https://cloud86.io/de/woocommerce-hosting/",
+        "en": "https://cloud86.io/woocommerce-hosting/"
+      },
+      "managed_vps": {
+        "nl": "https://cloud86.nl/managed-vps/",
+        "de": "https://cloud86.io/de/managed-vps/",
+        "en": "https://cloud86.io/managed-vps/"
+      }
+    }
+  },
+  "pricing_rules_general": {
+    "rule": "Always assume the client is new so use the `new_customer_deals` pricing. Only use the renewal prices if the client indicates a renewal."
+  },
+  "renewal_rules_general": {
+    "12_months_discount_percentage_off_standard": 10,
+    "36_months_discount_percentage_off_standard": 25,
+    "default_message_after_initial_term": "After your first term, you’ll pay the standard monthly rate, or you can renew for 12 or 36 months with a discount."
+  },
+"ai_logic_summary": [
+    "**Your Role:** You are Noa the friendly and proactive Cloud86 sales assistant. Your goal is to answer all questions about prices, specifications and usecases and guide new and existing customers to the right product and assist them with the purchasing and migration process.",
+    
+    "**1. If the `action` is `EXECUTE_SALES_ASSISTANT_FLOW` (from triage):**",
+    "   - This is a high-intent user who wants to migrate or buy. Your goal is to guide them, not to escalate immediately.",
+    "   - **Step A: Welcome & Explain Migration:** Welcome them enthusiastically. Explain the self-service migration process: 1. Order a package, 2. Choose the migration service, 3. Fill out the form received via email.",
+    "   - **Step B: Provide Link & Ask About Package:** Provide a Markdown link to the main migration service page. Then, ask a consultative question: 'Heb je al een pakket gekozen of wil je advies over welk pakket het beste bij jouw situatie past?'",
+    
+    "**2. If the user needs help choosing a package:**",
+    "   - Ask about their needs: number of websites, email addresses, expected traffic, etc.",
+    "   - Based on their answer, analyze the `product_categories` data and recommend the most suitable plan (e.g., 'Webhosting Start', 'Webhosting Medium'). Explain *why* it's a good fit based on the specs (e.g., 'With up to 2 websites and 10 email addresses, the Start package is perfect for your situation').",
+    "   - Provide a direct Markdown link to the product page and offer further help.",
+
+    "**3. If the user asks a general pricing question (action: `ANSWER_FROM_PRICING_DOC`):**",
+    "   - Follow the original pricing presentation flow: start with the standard monthly price, then present the 36-month and 12-month introductory offers.",
+    "   - Always be ready to pivot to the 'help choosing a package' flow if the user seems unsure."
+  ],
+  "product_categories": [
+    {
+      "category_name": "Webhosting Packages",
+      "plans": [
+        {
+          "id": "webhosting_start",
+          "name": "Webhosting Start",
+          "aliases": ["webhosting startpakket", "start webhosting", "goedkoopste webhosting"],
+          "specs": {
+            "ram": "512 MB", "vcpu": 2, "php_memory_limit": "256 MB", "php_workers": 5,
+            "storage": "5 GB NVMe SSD", "websites": 2, "email_addresses": 10, "databases": 5,
+            "data_traffic": "250 GB",
+            "migration_service": {
+              "available": true,
+              "cost_description": "Paid service. Free migration is NOT included for Webhosting Start.",
+              "details_link": "https://cloud86.nl/verhuisservice"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 3.75,
+            "standard_total_12_months": 45.00,
+            "standard_total_36_months": 135.00,
+            "new_customer_deals": {
+              "12_months_total": 35.40, "12_months_effective_monthly": 2.95,
+              "36_months_total": 70.20, "36_months_effective_monthly": 1.95
+            },
+            "renewal_prices": {
+              "12_months_total": 45.00, "36_months_total": 135.00,
+              "applies_standard_renewal_discount": false,
+              "note": "No discount on renewal for Webhosting Start. Standard rates apply."
+            }
+          }
+        },
+        {
+          "id": "webhosting_medium",
+          "name": "Webhosting Medium",
+          "aliases": ["webhosting medium pakket", "medium webhosting"],
+          "specs": {
+            "ram": "1 GB", "vcpu": 2, "php_memory_limit": "384 MB", "php_workers": 5,
+            "storage": "50 GB NVMe SSD", "websites": 5, "email_addresses": 50, "databases": 10,
+            "data_traffic": "Unlimited",
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free migration included for 12 or 36-month terms. Conditions apply. Max 5 websites",
+              "details_link": "https://cloud86.nl/verhuisservice"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 7.45,
+            "standard_total_12_months": 89.40, "standard_total_36_months": 268.20,
+            "new_customer_deals": {
+              "12_months_total": 47.40, "12_months_effective_monthly": 3.95,
+              "36_months_total": 106.20, "36_months_effective_monthly": 2.95
+            },
+            "renewal_prices": {
+              "12_months_total": 80.46, "36_months_total": 201.15,
+              "applies_standard_renewal_discount": true,
+              "note": "Renews with 10% discount for 12 months, 25% for 36 months off standard term price."
+            }
+          }
+        },
+        {
+          "id": "webhosting_power",
+          "name": "Webhosting Power",
+          "aliases": ["webhosting powerpakket", "power webhosting", "krachtige webhosting"],
+          "specs": {
+            "ram": "1.5 GB", "vcpu": 2, "php_memory_limit": "512 MB", "php_workers": 5,
+            "storage": "100 GB NVMe SSD", "websites": 10, "email_addresses": "Unlimited", "databases": 20,
+            "data_traffic": "Unlimited",
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free migration included for 12 or 36-month terms. Conditions apply. Max 5 websites",
+              "details_link": "https://cloud86.nl/verhuisservice"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 14.95,
+            "standard_total_12_months": 179.40, "standard_total_36_months": 538.20,
+            "new_customer_deals": {
+              "12_months_total": 95.40, "12_months_effective_monthly": 7.95,
+              "36_months_total": 214.20, "36_months_effective_monthly": 5.95
+            },
+            "renewal_prices": {
+              "12_months_total": 161.46, "36_months_total": 403.65,
+              "applies_standard_renewal_discount": true,
+              "note": "Renews with 10% discount for 12 months, 25% for 36 months off standard term price."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Email Hosting",
+      "category_note": "Pricing for Email Hosting plans is identical to their Webhosting equivalents. Specs listed are based on Webhosting plans; ACTION: please verify relevance for pure email hosting needs (e.g., PHP specs might differ or be irrelevant).",
+      "plans": [
+        {
+          "id": "email_start",
+          "name": "Email Start",
+          "aliases": ["email startpakket", "start emailhosting", "goedkoopste email"],
+          "specs": {
+            "storage": "5 GB NVMe SSD", "domains": "2", "email_addresses": 10,
+            "data_traffic": "250 GB",
+            "migration_service": {
+              "available": true,
+              "cost_description": "Paid service. Free email migration is NOT included for Email Start. Contact for details.",
+              "details_link": "https://cloud86.nl/verhuisservice"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 3.75,
+            "standard_total_12_months": 45.00, "standard_total_36_months": 135.00,
+            "new_customer_deals": {
+              "12_months_total": 35.40, "12_months_effective_monthly": 2.95,
+              "36_months_total": 70.20, "36_months_effective_monthly": 1.95
+            },
+            "renewal_prices": {
+              "12_months_total": 45.00, "36_months_total": 135.00,
+              "applies_standard_renewal_discount": false,
+              "note": "No discount on renewal for Email Start. Standard rates apply."
+            }
+          }
+        },
+        {
+          "id": "email_medium",
+          "name": "Email Medium",
+          "aliases": ["email medium pakket", "medium emailhosting"],
+          "specs": {
+            "storage": "50 GB NVMe SSD", "domains": "5", "email_addresses": 50,
+            "data_traffic": "Unlimited",
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free email migration for X accounts when choosing a 12 or 36-month term. Conditions apply. Contact for details.",
+              "details_link": "https://cloud86.nl/verhuisservice"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 7.45,
+            "standard_total_12_months": 89.40, "standard_total_36_months": 268.20,
+            "new_customer_deals": {
+              "12_months_total": 47.40, "12_months_effective_monthly": 3.95,
+              "36_months_total": 106.20, "36_months_effective_monthly": 2.95
+            },
+            "renewal_prices": {
+              "12_months_total": 80.46, "36_months_total": 201.15,
+              "applies_standard_renewal_discount": true,
+              "note": "Renews with 10% discount for 12 months, 25% for 36 months off standard term price."
+            }
+          }
+        },
+        {
+          "id": "email_power",
+          "name": "Email Power",
+          "aliases": ["email powerpakket", "power emailhosting"],
+          "specs": {
+            "storage": "100 GB NVMe SSD", "domains": "10", "email_addresses": "Unlimited",
+            "data_traffic": "Unlimited",
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free email migration for X accounts when choosing a 12 or 36-month term. Conditions apply. Contact for details.",
+              "details_link": "https://cloud86.nl/verhuisservice"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 14.95,
+            "standard_total_12_months": 179.40, "standard_total_36_months": 538.20,
+            "new_customer_deals": {
+              "12_months_total": 95.40, "12_months_effective_monthly": 7.95,
+              "36_months_total": 214.20, "36_months_effective_monthly": 5.95
+            },
+            "renewal_prices": {
+              "12_months_total": 161.46, "36_months_total": 403.65,
+              "applies_standard_renewal_discount": true,
+              "note": "Renews with 10% discount for 12 months, 25% for 36 months off standard term price."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Managed WordPress & WooCommerce",
+      "plans": [
+        {
+          "id": "wp_woo_start",
+          "name": "Start (Managed WordPress / WooCommerce)",
+          "aliases": ["wordpress start", "wp start", "woocommerce start", "woo start", "start wordpress pakket", "start woocommerce pakket", "managed wordpress start"],
+          "specs": {
+            "ram": "2 GB", "vcpu": 2, "php_memory_limit": "512 MB", "php_workers": 10,
+            "storage": "10 GB NVMe SSD", "websites": 2, "email_addresses": 10, "databases": 5,
+            "data_traffic": "Unlimited",
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free migration included for 12 or 36-month terms. Conditions apply. Max 5 websites",
+              "details_link": "https://cloud86.nl/verhuisservice"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 19.95,
+            "standard_total_12_months": 239.40, "standard_total_36_months": 718.20,
+            "new_customer_deals": {
+              "12_months_total": 119.40, "12_months_effective_monthly": 9.95,
+              "36_months_total": 286.20, "36_months_effective_monthly": 7.95
+            },
+            "renewal_prices": {
+              "12_months_total": 215.46, "36_months_total": 538.65,
+              "applies_standard_renewal_discount": true,
+              "note": "Renews with 10% discount for 12 months, 25% for 36 months off standard term price."
+            }
+          }
+        },
+        {
+          "id": "wp_woo_medium",
+          "name": "Medium (Managed WordPress / WooCommerce)",
+          "aliases": ["wordpress medium", "wp medium", "woocommerce medium", "woo medium", "medium wordpress pakket", "medium woocommerce pakket", "managed wordpress medium"],
+          "specs": {
+            "ram": "3 GB", "vcpu": 3, "php_memory_limit": "768 MB", "php_workers": 10,
+            "storage": "50 GB NVMe SSD", "websites": 5, "email_addresses": "Unlimited", "databases": 10,
+            "data_traffic": "Unlimited",
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free migration included for 12 or 36-month terms. Conditions apply. Max 5 websites",
+              "details_link": "https://cloud86.nl/verhuisservice"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 39.95,
+            "standard_total_12_months": 479.40,
+            "standard_total_36_months": 1438.20,
+            "new_customer_deals": {
+              "12_months_total": 239.40, "12_months_effective_monthly": 19.95,
+              "36_months_total": 574.20, "36_months_effective_monthly": 15.95
+            },
+            "renewal_prices": {
+              "12_months_total": 431.46, "36_months_total": 1078.65,
+              "applies_standard_renewal_discount": true,
+              "note": "Renews with 10% discount for 12 months, 25% for 36 months off standard term price."
+            }
+          }
+        },
+        {
+          "id": "wp_woo_power",
+          "name": "Power (Managed WordPress / WooCommerce)",
+          "aliases": ["wordpress power", "wp power", "woocommerce power", "woo power", "power wordpress pakket", "power woocommerce pakket", "managed wordpress power"],
+          "specs": {
+            "ram": "4 GB", "vcpu": 3, "php_memory_limit": "768 MB", "php_workers": 10,
+            "storage": "100 GB NVMe SSD", "websites": 10, "email_addresses": "Unlimited", "databases": 20,
+            "data_traffic": "Unlimited",
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free migration included for 12 or 36-month terms. Conditions apply. Max 5 websites",
+              "details_link": "https://cloud86.nl/verhuisservice"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 64.95,
+            "standard_total_12_months": 779.40,
+            "standard_total_36_months": 2338.20,
+            "new_customer_deals": {
+              "12_months_total": 407.40, "12_months_effective_monthly": 33.95,
+              "36_months_total": 934.20, "36_months_effective_monthly": 25.95
+            },
+            "renewal_prices": {
+              "12_months_total": 701.46, "36_months_total": 1753.65,
+              "applies_standard_renewal_discount": true,
+              "note": "Renews with 10% discount for 12 months, 25% for 36 months off standard term price."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Managed VPS",
+      "category_note": "Managed VPS plans are billed monthly at standard rates. No term-based (e.g., yearly) discounts apply. Plans include software (CloudLinux, Imunify360, Plesk, Antispam, LiteSpeed) and a premium SLA.",
+      "upgrade_options": {
+        "cpu_core_monthly_increment_price": 5.00,
+        "ram_1gb_monthly_increment_price": 7.50,
+        "ssd_10gb_monthly_increment_price": 2.00,
+        "note": "Upgrade prices are per month on top of the base plan price."
+      },
+      "plans": [
+        {
+          "id": "managed_vps_start",
+          "name": "Managed VPS Start",
+          "aliases": ["vps start", "managed vps s"],
+          "specs": {
+            "storage": "50 GB NVMe SSD", "vcpu": 3, "ram": "6 GB",
+            "data_traffic": "Unlimited",
+            "included_software_value_monthly": 139,
+            "included_sla_value_monthly": 74.95,
+            "features": ["CloudLinux", "Imunify360", "Plesk", "Antispam", "LiteSpeed", "Premium Support", "Managed Updates", "24/7 Standby"],
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free migration included for 12 or 36-month terms. Conditions apply. Max 5 websites.",
+              "details_link": "https://cloud86.io/managed-vps/"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 179.00,
+            "note": "Billed monthly. No discounts for longer commitment periods."
+          }
+        },
+        {
+          "id": "managed_vps_medium",
+          "name": "Managed VPS Medium",
+          "aliases": ["vps medium", "managed vps m"],
+          "specs": {
+            "storage": "100 GB NVMe SSD", "vcpu": 6, "ram": "12 GB",
+            "data_traffic": "Unlimited",
+            "included_software_value_monthly": 139,
+            "included_sla_value_monthly": 74.95,
+            "features": ["CloudLinux", "Imunify360", "Plesk", "Antispam", "LiteSpeed", "Premium Support", "Managed Updates", "24/7 Standby"],
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free migration included for 12 or 36-month terms. Conditions apply. Max 5 websites.",
+              "details_link": "https://cloud86.io/managed-vps/"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 249.00,
+            "note": "Billed monthly. No discounts for longer commitment periods."
+          }
+        },
+        {
+          "id": "managed_vps_power",
+          "name": "Managed VPS Power",
+          "aliases": ["vps power", "managed vps p", "managed vps l", "vps l"],
+          "specs": {
+            "storage": "200 GB NVMe SSD", "vcpu": 8, "ram": "24 GB",
+            "data_traffic": "Unlimited",
+            "included_software_value_monthly": 139,
+            "included_sla_value_monthly": 74.95,
+            "features": ["CloudLinux", "Imunify360", "Plesk", "Antispam", "LiteSpeed", "Premium Support", "Managed Updates", "24/7 Standby"],
+            "migration_service": {
+              "available": true,
+              "cost_description": "Free migration included for 12 or 36-month terms. Conditions apply. Max 5 websites.",
+              "details_link": "https://cloud86.io/managed-vps/"
+            }
+          },
+          "pricing": {
+            "standard_monthly_price": 369.00,
+            "note": "Billed monthly. No discounts for longer commitment periods."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "description": "A conversational decision tree to guide new users to the correct hosting package based on their needs.",
+  "start_intent_id": "hosting_orientation",
+  "intents": [
+    {
+      "id": "hosting_orientation",
+      "example_phrases": [
+        "I don't know which hosting package I need",
+        "I want to make a website but don't know where to start",
+        "Which package should I choose?",
+        "I'd like to get hosting"
+      ],
+      "bot_response": "Great to hear you're starting a website! We'd love to help. What kind of website are you planning to build? (For example: a blog, business site, webshop, portfolio...)"
+    },
+    {
+      "id": "website_type_webshop",
+      "example_phrases": [
+        "I want to start an online store",
+        "I want to sell products",
+        "I want a site for my shop",
+        "I'm building a WooCommerce site"
+      ],
+      "bot_response": "That sounds like a great project! Roughly how many products do you plan to offer? (For example: less than 50, or more than 50)"
+    },
+    {
+      "id": "small_webshop",
+      "example_phrases": [
+        "Less than 10",
+        "Less than 50",
+        "Around 30 products",
+        "Not that many"
+      ],
+      "bot_response": "For a webshop like that, we recommend the **Managed WooCommerce Start package**. It's optimized for performance. You can find more info here: [Managed WooCommerce Hosting](https://cloud86.io/nl/woocommerce-hosting/)"
+    },
+    {
+      "id": "large_webshop",
+      "example_phrases": [
+        "More than 50",
+        "A lot of products",
+        "Hundreds of items"
+      ],
+      "bot_response": "For a larger store, it’s important that it stays fast and reliable. The **Managed WooCommerce Medium package** offers the power you need. You can find more info here: [Managed WooCommerce Hosting](https://cloud86.io/nl/woocommerce-hosting/)"
+    },
+    {
+      "id": "website_type_blog",
+      "example_phrases": [
+        "I want to start a blog",
+        "I want to write about my hobby",
+        "I need a personal website"
+      ],
+      "bot_response": "Sounds great! Will you be posting regularly or just occasionally?"
+    },
+    {
+      "id": "blog_light_use",
+      "example_phrases": [
+        "Occasionally",
+        "A few times a month",
+        "Not often"
+      ],
+      "bot_response": "The **Webhosting Start** package should be perfect for that. You can find more info here: [Cloud86 Webhosting](https://cloud86.io/web-hosting/)"
+    },
+    {
+      "id": "blog_frequent_use",
+      "example_phrases": [
+        "I blog every day",
+        "It's a professional blog",
+        "I post a lot"
+      ],
+      "bot_response": "A **Webhosting Medium** package would be a better fit for frequent updates. You can find more info here: [Cloud86 Webhosting](https://cloud86.io/web-hosting/)"
+    },
+    {
+      "id": "website_type_business_portfolio",
+      "example_phrases": [
+        "I want a site for my business",
+        "I need a portfolio",
+        "I want to showcase my services"
+      ],
+      "bot_response": "For sites like that, the **Webhosting Medium** package is usually a great fit. You can find more info here: [Cloud86 Webhosting](https://cloud86.io/web-hosting/)"
+    },
+    {
+      "id": "unsure_needs_guidance",
+      "example_phrases": [
+        "I'm not really sure",
+        "No idea yet",
+        "I'm still deciding"
+      ],
+      "bot_response": "No problem at all! If you'd prefer to speak with someone directly, I can connect you with a specialist who can help you choose. Shall I start the handover?"
+    },
+    {
+      "id": "seasonal_traffic_inquiry",
+      "example_phrases": [
+        "Can I upgrade just for the holidays?",
+        "I need a temporary upgrade for Black Friday",
+        "Can I downgrade again after the busy season?",
+        "I expect a traffic spike in December",
+        "I want to upgrade for a month"
+      ],
+      "bot_response": "We understand that your traffic can vary! However, to ensure the stability of your website, we generally advise against (and do not actively facilitate) frequent upgrading and downgrading of plans for short periods.\n\nWe recommend choosing a package that has enough capacity to handle your **peak** moments comfortably. For significantly fluctuating high traffic, our **Managed VPS** is often the best choice as it provides dedicated resources."
+    }
+  ]
+}
