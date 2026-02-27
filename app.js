@@ -23,7 +23,7 @@ function saveProgress() {
     correctAnswers: STATE.correctAnswers,
     currentView: STATE.currentView,
   };
-  try { localStorage.setItem(SAVE_KEY, JSON.stringify(data)); } catch(e) {}
+  try { localStorage.setItem(SAVE_KEY, JSON.stringify(data)); } catch (e) { }
 }
 
 function loadProgress() {
@@ -33,11 +33,11 @@ function loadProgress() {
     const data = JSON.parse(raw);
     data.casesCompleted = new Set(data.casesCompleted);
     return data;
-  } catch(e) { return null; }
+  } catch (e) { return null; }
 }
 
 function clearProgress() {
-  try { localStorage.removeItem(SAVE_KEY); } catch(e) {}
+  try { localStorage.removeItem(SAVE_KEY); } catch (e) { }
 }
 
 // =============================================
@@ -166,7 +166,7 @@ const CASES = {
           </div>
           <div class="clue-box">
             <span class="clue-icon">💡</span>
-            <div class="clue-text"><strong>Why Managed WordPress instead of regular Webhosting?</strong> When all sites run WordPress, Managed WordPress adds significant value: automatic updates, staging environments, and expert WordPress support. Same price bracket, much better experience for WordPress users.</div>
+            <div class="clue-text"><strong>Why Managed WordPress instead of regular Webhosting?</strong> Managed WordPress is a step up in both price and capability. Recommend it when the customer: (1) wants <strong>automatic WordPress core + plugin updates</strong>, (2) wants <strong>WordPress-specific support</strong>, or (3) benefits from <strong>more powerful, less-crowded servers</strong> — Managed plans share resources with far fewer customers, meaning more stability and less impact from noisy neighbours.<br><br>The staging environment (available from Medium) is powered by <a href="https://www.plesk.com/wp-toolkit/" target="_blank">WordPress Toolkit</a>. It creates a full copy of the site on a subdomain. Customers can test updates there before applying them to the live site. See also: <a href="https://support.cloud86.io/hc/nl/articles/5927728725277" target="_blank">Website klonen naar subdomein</a> and <a href="https://support.cloud86.io/hc/nl/articles/4444662389789" target="_blank">Staging terugplaatsen naar hoofddomein</a>.</div>
           </div>
         `
       },
@@ -177,10 +177,13 @@ const CASES = {
         subtitle: 'Pick the right package for Martijn and explain your reasoning.',
         questions: [
           {
-            q: 'Martijn has 3 WordPress websites. Which product line best fits his needs?',
-            options: ['Webhosting', 'Managed WordPress', 'Managed WooCommerce', 'Managed VPS'],
+            q: 'Martijn has 3 WordPress websites and wants automatic updates and WordPress-specific support. Which product line best fits?',
+            options: ['Webhosting — works fine for WordPress and is cheaper', 'Managed WordPress — optimised for WP with auto-updates and expert support', 'Managed WooCommerce — for webshops', 'Managed VPS — only for very high traffic'],
             correct: 1,
-            feedback: 'Correct! All three sites run WordPress, making Managed WordPress the best fit. It includes auto-updates, staging, and WordPress-specific support — advantages that regular Webhosting doesn\'t offer.'
+            feedback: {
+              correct: 'Exactly right. Managed WordPress is the best fit when the customer wants automatic updates, WordPress-specific support, and the benefit of less-crowded, more stable servers. Webhosting can technically run WordPress, but Managed WordPress is built for it.',
+              wrong: 'Not quite. Webhosting can run WordPress fine — but Managed WordPress is the better fit here because Martijn benefits from automatic updates, expert WordPress support, and more stable server resources. The key differentiators are: auto-updates, WP Toolkit (staging from Medium), and less resource contention between customers.'
+            }
           },
           {
             q: 'Within that product line, which tier does Martijn need at minimum?',
@@ -248,7 +251,7 @@ const CASES = {
           </div>
           <div class="clue-box">
             <span class="clue-icon">💼</span>
-            <div class="clue-text"><strong>Advisor note:</strong> 1 website, no WordPress mentioned, no webshop. 2 email addresses. Budget-conscious customer. What's the minimum that covers everything she needs?</div>
+            <div class="clue-text"><strong>Advisor note:</strong> 1 website, 2 email addresses, budget-conscious. Although she didn't mention WordPress by name, that's a safe assumption — the vast majority of Cloud86 customers use WordPress, and all Webhosting plans support it fully. What's the minimum package that covers everything she needs?</div>
           </div>
         `
       },
@@ -271,7 +274,7 @@ const CASES = {
           </div>
           <div class="clue-box">
             <span class="clue-icon">💡</span>
-            <div class="clue-text"><strong>Migration tip:</strong> Webhosting Start does not include free migration. Free migration is included from Medium onwards (max 5 sites). If Anita is moving from another provider and wants migration assistance, she might consider Medium — but if she's new, Start is the right call.</div>
+            <div class="clue-text"><strong>Migration tip:</strong> Webhosting Start does not include free migration — it costs <strong>€75</strong> as a one-time fee. Free migration is included from Medium onwards (max 5 sites, on a 12m or 36m contract).<br><br>If Anita is moving from another provider: upgrading from Start (€1.95/m) to Medium (€2.95/m) adds €1/month — but saves the €75 migration fee. Over a 12-month contract that's a net saving of €63. So for a migrating customer, Medium is actually the smarter financial choice — even if she only needs Start in terms of features.</div>
           </div>
         `
       },
@@ -315,9 +318,9 @@ const CASES = {
           text: 'Same situation as Anita — 1 website, 2 email addresses — but this time she\'s currently hosted at TransIP and wants to move everything to Cloud86 and asks if migration is included. What do you recommend now?',
           answer: `
             <strong>Two valid approaches:</strong><br><br>
-            <strong>Option 1: Webhosting Start</strong> — Free migration is NOT included. She would need to migrate herself or pay for assisted migration. If she\'s comfortable doing it herself, Start is still fine.<br><br>
-            <strong>Option 2: Webhosting Medium</strong> — Includes free migration for up to 5 sites. Given she has 1 site to migrate, this is the cleanest option if she doesn\'t want to do it herself. The price difference between Start and Medium is small.<br><br>
-            <strong>Recommendation:</strong> Explain both options and let her choose based on whether she wants the migration handled for her. Don\'t force Medium — but make the value clear.
+            <strong>Option 1: Webhosting Start (€1.95/m)</strong> — Free migration is NOT included. A paid migration costs <strong>€75 one-time</strong>. If she can migrate herself or prefers the lowest monthly cost and is fine doing the move, this works.<br><br>
+            <strong>Option 2: Webhosting Medium (€2.95/m)</strong> — Includes free migration (on 12m/36m contract). The price difference is €1/month. Over 12 months that's €12 extra — but saves the €75 migration fee. Net saving: <strong>€63</strong> by choosing Medium.<br><br>
+            <strong>Recommendation:</strong> For a migrating customer, Medium is almost always the smarter financial choice even if she only needs Start in terms of features. Present the math clearly and let her decide. Don't force it — but make the value obvious.
           `
         }
       }
@@ -369,19 +372,27 @@ const CASES = {
             <p><strong style="color:var(--amber)">Managed WooCommerce</strong> — dedicated WooCommerce stack, staging environment, automatic updates, WooCommerce-specific performance optimizations, daily backups</p>
           </div>
           <div class="theory-box">
-            <h4>📊 The Product Count Rule</h4>
-            <p>For WooCommerce shops, use product count as a proxy for complexity:</p>
-            <p><strong style="color:var(--red)">Under 50 products</strong> → Webhosting or Managed WooCommerce Start</p>
-            <p><strong style="color:var(--amber)">50–500 products</strong> → Managed WooCommerce Start or Medium</p>
-            <p><strong style="color:var(--green)">500+ products</strong> → Managed WooCommerce Medium or Power (VPS for very large shops)</p>
+            <h4>📊 Assessing WooCommerce Resource Needs</h4>
+            <p>Product count is a <strong>starting point</strong>, not the whole picture. Performance depends on the full resource profile of the shop. Always assess:</p>
+            <ul>
+              <li><strong>Product count</strong> (baseline indicator)</li>
+              <li><strong>Active plugins</strong> — page builders (Elementor, Divi), WPML, product feed/sync tools (Channable), subscriptions or booking plugins all significantly increase server load</li>
+              <li><strong>Traffic pattern</strong> — steady vs. peak moments (campaigns, seasonal spikes)</li>
+              <li><strong>Variable products</strong> — a product with 10 colour × 5 size variants = 50 effective SKUs; this multiplies database load</li>
+            </ul>
+            <p>When in doubt, ask the customer for a screenshot of their current CPU, RAM, and storage usage from their control panel — this removes ambiguity entirely.</p>
+            <p style="margin-top:12px"><strong style="color:var(--red)">Low complexity + under 50 products</strong> → Managed WooCommerce Start</p>
+            <p><strong style="color:var(--amber)">Medium complexity OR 50–250 products</strong> → Managed WooCommerce Medium (safe default when unsure)</p>
+            <p><strong style="color:var(--green)">High complexity OR 250+ products</strong> → Managed WooCommerce Power</p>
+            <p><strong style="color:var(--primary)">500+ effective SKUs, heavy plugins, traffic peaks</strong> → Managed VPS</p>
           </div>
           <div class="warn-box">
             <span class="clue-icon">⚠️</span>
-            <div class="warn-text"><strong>Kevin has 800 products on Webhosting Medium.</strong> He\'s above the threshold where Managed WooCommerce Start (max 500 products) applies. He needs <strong style="color:var(--amber)">Managed WooCommerce Medium</strong> (up to 500 products... wait — Medium supports up to 500. Power is unlimited). With 800 products, he needs <strong style="color:var(--amber)">Managed WooCommerce Power</strong>.</div>
+            <div class="warn-text"><strong>Kevin has 800 products on Webhosting Medium.</strong> At this scale — and with a staging requirement — Webhosting is simply the wrong product line. He needs <strong style="color:var(--amber)">Managed WooCommerce Power</strong>: purpose-built for WooCommerce, includes staging, and has the dedicated resources his shop needs at this size.</div>
           </div>
           <div class="clue-box">
             <span class="clue-icon">💡</span>
-            <div class="clue-text"><strong>Staging solves his developer's problem too:</strong> Managed WooCommerce Medium and Power include staging environments. His developer can push updates safely to staging before the live shop — exactly what they need.</div>
+            <div class="clue-text"><strong>Staging solves his developer's problem too:</strong> Managed WooCommerce Medium and Power include staging environments (via WordPress Toolkit). His developer can push updates safely to staging before the live shop — exactly what they need.</div>
           </div>
         `
       },
@@ -588,8 +599,8 @@ const CASES = {
           <div class="theory-box">
             <h4>🆚 The Comparison</h4>
             <p>Both <strong style="color:var(--amber)">Webhosting</strong> and <strong style="color:var(--amber)">Managed WordPress</strong> can run WordPress. The difference is what\'s built in:</p>
-            <p><strong>Webhosting Start</strong> — standard PHP/MySQL stack. WordPress runs fine. The customer manages updates manually. No staging.</p>
-            <p><strong>Managed WordPress Start</strong> — same price bracket, but adds: automatic WordPress core and plugin updates, daily backups, WordPress-optimized caching, staging environment (from Medium), expert WordPress support.</p>
+            <p><strong>Webhosting Start (€1.95/m)</strong> — standard PHP/MySQL stack. WordPress runs fine. The customer manages updates manually. No staging. Daily backups included (as with all Cloud86 plans).</p>
+            <p><strong>Managed WordPress Start (€7.95/m)</strong> — a significant step up in both price and capability. Adds: automatic WordPress core and plugin updates, <strong>2× daily backups</strong> (vs. once for Webhosting), WordPress-optimized caching, WordPress Toolkit, staging environment (from Medium onwards), expert WordPress support, and less-crowded servers for more stable performance.</p>
           </div>
           <div class="theory-box">
             <h4>📋 When to recommend Managed WordPress</h4>
@@ -1439,20 +1450,23 @@ function renderCurrentQuestion(qIndex) {
       if (alreadyAnswered.chosen === i && i !== q.correct) cls = 'selected-wrong disabled';
     }
     return `<div class="quiz-option ${cls}" onclick="selectAnswer(${qIndex}, ${i})">
-      <span class="option-letter">${String.fromCharCode(65+i)}</span>${opt}
+      <span class="option-letter">${String.fromCharCode(65 + i)}</span>${opt}
     </div>`;
   }).join('');
 
   let feedbackHtml = '';
   if (alreadyAnswered) {
+    const feedbackText = typeof q.feedback === 'object'
+      ? (alreadyAnswered.correct ? q.feedback.correct : q.feedback.wrong)
+      : q.feedback;
     feedbackHtml = `<div class="quiz-feedback ${alreadyAnswered.correct ? 'correct' : 'wrong'}">
-      ${alreadyAnswered.correct ? '✅ ' : '❌ '} ${q.feedback}
+      ${alreadyAnswered.correct ? '✅ ' : '❌ '} ${feedbackText}
     </div>`;
   }
 
   let navHtml = '';
   if (alreadyAnswered && qIndex < questions.length - 1) {
-    navHtml = `<button class="btn-primary" style="margin-top:20px" onclick="renderCurrentQuestion(${qIndex+1})">Next question →</button>`;
+    navHtml = `<button class="btn-primary" style="margin-top:20px" onclick="renderCurrentQuestion(${qIndex + 1})">Next question →</button>`;
   }
 
   const container = document.getElementById('quizContainer');
@@ -1683,8 +1697,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!caseNum) return;
     card.style.cursor = 'pointer';
     card.addEventListener('click', () => {
-      const tier2 = [6,7,8,9,10];
-      const tier1Done = [1,2,3,4,5].every(n => STATE.casesCompleted.has(n));
+      const tier2 = [6, 7, 8, 9, 10];
+      const tier1Done = [1, 2, 3, 4, 5].every(n => STATE.casesCompleted.has(n));
       if (tier2.includes(caseNum) && !tier1Done) {
         card.style.animation = 'none';
         card.style.transform = 'translateX(-6px)';
@@ -1704,7 +1718,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!document.getElementById('nav-1').classList.contains('locked')) openCase(1);
   });
 
-  [2,3,4,5,6,7,8,9,10].forEach(n => {
+  [2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(n => {
     const el = document.getElementById(`nav-${n}`);
     if (el) el.addEventListener('click', () => {
       if (!el.classList.contains('locked')) openCase(n);
@@ -1713,7 +1727,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const saved = loadProgress();
   if (saved && (saved.xp > 0 || (saved.casesCompleted && saved.casesCompleted.length > 0) ||
-      saved.currentStep > 0 || Object.keys(saved.quizAnswered || {}).length > 0)) {
+    saved.currentStep > 0 || Object.keys(saved.quizAnswered || {}).length > 0)) {
     showResumeBanner(saved);
   }
 });
