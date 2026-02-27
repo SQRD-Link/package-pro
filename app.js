@@ -83,8 +83,8 @@ const PACKAGES = {
     tiers: ['Start', 'Medium', 'Power'],
     notes: {
       Start: '2 sites, auto-updates, daily backups',
-      Medium: 'Up to 5 sites, staging environment',
-      Power: '10 sites, staging, auto-updates, priority support'
+      Medium: 'Up to 5 sites, auto-updates, daily backups',
+      Power: '10 sites, auto-updates, priority support'
     }
   },
   woocommerce: {
@@ -92,7 +92,7 @@ const PACKAGES = {
     tiers: ['Start', 'Medium', 'Power'],
     notes: {
       Start: 'Up to 50 products, daily backups',
-      Medium: 'Up to 500 products, staging',
+      Medium: 'Up to 500 products, daily backups',
       Power: 'Unlimited products, priority support'
     }
   },
@@ -154,7 +154,7 @@ const CASES = {
             <h4>📦 The Product Lines</h4>
             <p>Cloud86 offers five core product lines, each available in Start / Medium / Power:</p>
             <p><strong style="color:var(--amber)">Webhosting</strong> — Classic shared hosting. Great for any kind of website. Start = 2 sites, Medium = up to 5 sites, Power = 10 sites.</p>
-            <p><strong style="color:var(--amber)">Managed WordPress</strong> — WordPress-specific hosting with auto-updates, staging, and daily backups. Same 2/5/10 structure as Webhosting.</p>
+            <p><strong style="color:var(--amber)">Managed WordPress</strong> — WordPress-specific hosting with auto-updates, expert support, and 2x daily backups. Same 2/5/10 structure as Webhosting.</p>
             <p><strong style="color:var(--amber)">Managed WooCommerce</strong> — Like Managed WordPress, but optimized for webshops. Start = up to 50 products.</p>
             <p><strong style="color:var(--amber)">Email Hosting</strong> — Email-only hosting. 10 / 50 / unlimited mailboxes.</p>
             <p><strong style="color:var(--amber)">Managed VPS</strong> — Virtual private server. Used for high-traffic sites, developers, or customers needing full control.</p>
@@ -166,7 +166,7 @@ const CASES = {
           </div>
           <div class="clue-box">
             <span class="clue-icon">💡</span>
-            <div class="clue-text"><strong>Why Managed WordPress instead of regular Webhosting?</strong> Managed WordPress is a step up in both price and capability. Recommend it when the customer: (1) wants <strong>automatic WordPress core + plugin updates</strong>, (2) wants <strong>WordPress-specific support</strong>, or (3) benefits from <strong>more powerful, less-crowded servers</strong> — Managed plans share resources with far fewer customers, meaning more stability and less impact from noisy neighbours.<br><br>The staging environment (available from Medium) is powered by <a href="https://www.plesk.com/wp-toolkit/" target="_blank">WordPress Toolkit</a>. It creates a full copy of the site on a subdomain. Customers can test updates there before applying them to the live site. See also: <a href="https://support.cloud86.io/hc/nl/articles/5927728725277" target="_blank">Website klonen naar subdomein</a> and <a href="https://support.cloud86.io/hc/nl/articles/4444662389789" target="_blank">Staging terugplaatsen naar hoofddomein</a>.</div>
+            <div class="clue-text"><strong>Why Managed WordPress instead of regular Webhosting?</strong> Managed WordPress is a step up in both price and capability. Recommend it when the customer: (1) wants <strong>automatic WordPress core + plugin updates</strong>, (2) wants <strong>WordPress-specific support</strong>, or (3) benefits from <strong>more powerful, less-crowded servers</strong> — Managed plans share resources with far fewer customers, meaning more stability and less impact from noisy neighbours.</div>
           </div>
         `
       },
@@ -182,7 +182,7 @@ const CASES = {
             correct: 1,
             feedback: {
               correct: 'Exactly right. Managed WordPress is the best fit when the customer wants automatic updates, WordPress-specific support, and the benefit of less-crowded, more stable servers. Webhosting can technically run WordPress, but Managed WordPress is built for it.',
-              wrong: 'Not quite. Webhosting can run WordPress fine — but Managed WordPress is the better fit here because Martijn benefits from automatic updates, expert WordPress support, and more stable server resources. The key differentiators are: auto-updates, WP Toolkit (staging from Medium), and less resource contention between customers.'
+              wrong: 'Not quite. Webhosting can run WordPress fine — but Managed WordPress is the better fit here because Martijn benefits from automatic updates, expert WordPress support, and more stable server resources. The key differentiators are: auto-updates, expert support, and less resource contention between customers.'
             }
           },
           {
@@ -348,14 +348,14 @@ const CASES = {
             <div class="ticket-from">From: <strong>Kevin de Groot</strong> — kevin@sport-de-groot.nl</div>
             <div class="ticket-body">
               Hi,<br><br>
-              My webshop (sport-de-groot.nl) is very slow. Customers complain. I have around 800 products and I\'m on Webhosting Medium. I was told this would be enough. My developer also wants a test environment before pushing updates to the live shop, but I don\'t have that option in my current plan.<br><br>
+              My webshop (sport-de-groot.nl) is very slow. Customers complain. I have around 800 products and I\'m on Webhosting Medium. I was told this would be enough, but clearly we need a performance upgrade.<br><br>
               Can you help?<br><br>
               Kevin
             </div>
           </div>
           <div class="clue-box">
             <span class="clue-icon">💼</span>
-            <div class="clue-text"><strong>Advisor note:</strong> 800-product WooCommerce webshop on Webhosting Medium. Performance issues. Needs staging. Two clear signals pointing to the wrong product line.</div>
+            <div class="clue-text"><strong>Advisor note:</strong> 800-product WooCommerce webshop on Webhosting Medium. Performance issues. Clear signal pointing to the wrong product line.</div>
           </div>
         `
       },
@@ -368,8 +368,8 @@ const CASES = {
           <div class="theory-box">
             <h4>🛒 WooCommerce: Regular Hosting vs Managed WooCommerce</h4>
             <p>Regular Webhosting can technically run WooCommerce — but it\'s not optimized for it. As a shop grows (more products, more traffic, more orders), the difference becomes significant:</p>
-            <p><strong style="color:var(--amber)">Webhosting</strong> — shared resources, no staging, generic caching</p>
-            <p><strong style="color:var(--amber)">Managed WooCommerce</strong> — dedicated WooCommerce stack, staging environment, automatic updates, WooCommerce-specific performance optimizations, daily backups</p>
+            <p><strong style="color:var(--amber)">Webhosting</strong> — shared resources, generic caching</p>
+            <p><strong style="color:var(--amber)">Managed WooCommerce</strong> — dedicated WooCommerce stack, automatic updates, WooCommerce-specific performance optimizations, 2x daily backups</p>
           </div>
           <div class="theory-box">
             <h4>📊 Assessing WooCommerce Resource Needs</h4>
@@ -388,11 +388,7 @@ const CASES = {
           </div>
           <div class="warn-box">
             <span class="clue-icon">⚠️</span>
-            <div class="warn-text"><strong>Kevin has 800 products on Webhosting Medium.</strong> At this scale — and with a staging requirement — Webhosting is simply the wrong product line. He needs <strong style="color:var(--amber)">Managed WooCommerce Power</strong>: purpose-built for WooCommerce, includes staging, and has the dedicated resources his shop needs at this size.</div>
-          </div>
-          <div class="clue-box">
-            <span class="clue-icon">💡</span>
-            <div class="clue-text"><strong>Staging solves his developer's problem too:</strong> Managed WooCommerce Medium and Power include staging environments (via WordPress Toolkit). His developer can push updates safely to staging before the live shop — exactly what they need.</div>
+            <div class="warn-text"><strong>Kevin has 800 products on Webhosting Medium.</strong> At this scale, Webhosting is simply the wrong product line. He needs <strong style="color:var(--amber)">Managed WooCommerce Power</strong>: purpose-built for WooCommerce, and has the dedicated resources his shop needs at this size.</div>
           </div>
         `
       },
@@ -403,10 +399,10 @@ const CASES = {
         subtitle: 'Time to move Kevin to the right package.',
         questions: [
           {
-            q: 'Kevin has 800 WooCommerce products and needs a staging environment. What\'s the correct product line?',
+            q: 'Kevin has 800 WooCommerce products and is experiencing performance issues. What\'s the correct product line?',
             options: ['Webhosting Power', 'Managed WordPress Power', 'Managed WooCommerce', 'Managed VPS'],
             correct: 2,
-            feedback: 'Correct. 800 WooCommerce products with staging requirements = Managed WooCommerce. This product line is purpose-built for WooCommerce shops and includes the staging environment Kevin\'s developer needs.'
+            feedback: 'Correct. 800 WooCommerce products experiencing slowdowns = Managed WooCommerce. This product line is purpose-built for larger WooCommerce shops and provides dedicated resources.'
           },
           {
             q: 'Managed WooCommerce Start supports up to 50 products, Medium up to 500, Power is unlimited. Kevin has 800 products. Which tier?',
@@ -418,12 +414,12 @@ const CASES = {
             q: 'Kevin asks if he can stay on Webhosting Medium but just add more resources. What do you tell him?',
             options: [
               'Yes, he can add resource add-ons to Webhosting Medium',
-              'Webhosting isn\'t optimized for WooCommerce at this scale. A move to Managed WooCommerce Power will solve performance and give him staging — both problems solved at once',
+              'Webhosting isn\'t optimized for WooCommerce at this scale. A move to Managed WooCommerce Power will solve performance issues by providing the right architecture.',
               'He should switch to a VPS instead',
               'Yes, upgrading to Webhosting Power will fix everything'
             ],
             correct: 1,
-            feedback: 'Correct. Adding resources to Webhosting doesn\'t solve the architectural mismatch. Managed WooCommerce uses a purpose-built WooCommerce stack — this is the real fix. Address both the performance issue and the staging need in one recommendation.'
+            feedback: 'Correct. Adding resources to Webhosting doesn\'t solve the architectural mismatch. Managed WooCommerce uses a purpose-built WooCommerce stack — this is the real fix. Address the core performance issue with the right architecture.'
           }
         ]
       },
@@ -599,8 +595,8 @@ const CASES = {
           <div class="theory-box">
             <h4>🆚 The Comparison</h4>
             <p>Both <strong style="color:var(--amber)">Webhosting</strong> and <strong style="color:var(--amber)">Managed WordPress</strong> can run WordPress. The difference is what\'s built in:</p>
-            <p><strong>Webhosting Start (€1.95/m)</strong> — standard PHP/MySQL stack. WordPress runs fine. The customer manages updates manually. No staging. Daily backups included (as with all Cloud86 plans).</p>
-            <p><strong>Managed WordPress Start (€7.95/m)</strong> — a significant step up in both price and capability. Adds: automatic WordPress core and plugin updates, <strong>2× daily backups</strong> (vs. once for Webhosting), WordPress-optimized caching, WordPress Toolkit, staging environment (from Medium onwards), expert WordPress support, and less-crowded servers for more stable performance.</p>
+            <p><strong>Webhosting Start (€1.95/m)</strong> — standard PHP/MySQL stack. WordPress runs fine. The customer manages updates manually. Daily backups included (as with all Cloud86 plans).</p>
+            <p><strong>Managed WordPress Start (€7.95/m)</strong> — a significant step up in both price and capability. Adds: automatic WordPress core and plugin updates, <strong>2× daily backups</strong> (vs. once for Webhosting), WordPress-optimized caching, expert WordPress support, and less-crowded servers for more stable performance.</p>
           </div>
           <div class="theory-box">
             <h4>📋 When to recommend Managed WordPress</h4>
@@ -626,8 +622,8 @@ const CASES = {
             q: 'Tom has 1 WordPress blog with plugins, moderate traffic, and is migrating. What\'s the better recommendation?',
             options: [
               'Webhosting Start — cheapest and works fine for WordPress',
-              'Managed WordPress Start — same price, but adds auto-updates, WordPress support, and migration assistance',
-              'Managed WordPress Medium — he needs staging for a blog',
+              'Managed WordPress Start — adds auto-updates, WordPress support, and migration assistance',
+              'Managed WordPress Medium — minimum tier for 2,000 visitors/day',
               'Managed VPS — 2000 visitors/day requires a VPS'
             ],
             correct: 1,
@@ -1050,7 +1046,7 @@ const CASES = {
           </div>
           <div class="clue-box">
             <span class="clue-icon">💼</span>
-            <div class="clue-text"><strong>Advisor note:</strong> WordPress news site, 3 editors, variable traffic (5k–25k/day), staging required, backups critical. Multiple signals — let\'s map them to the right package.</div>
+            <div class="clue-text"><strong>Advisor note:</strong> WordPress news site, 3 editors, variable traffic (5k–25k/day), 30GB storage needed for media, backups critical. Multiple signals — let\'s map them to the right package.</div>
           </div>
         `
       },
@@ -1063,14 +1059,14 @@ const CASES = {
           <div class="theory-box">
             <h4>📊 Signal Mapping</h4>
             <p><strong style="color:var(--amber)">Multiple simultaneous editors</strong> → Managed WordPress (collaborative-friendly, not shared basic hosting)</p>
-            <p><strong style="color:var(--amber)">Staging required for testing</strong> → Managed WordPress Medium or Power (staging is included from Medium upwards)</p>
-            <p><strong style="color:var(--amber)">Traffic peaks to 25k/day</strong> → Needs solid caching, possibly VPS depending on peak intensity</p>
+            <p><strong style="color:var(--amber)">30GB Storage needed</strong> → Managed WordPress Medium or Power (Start only has 5GB)</p>
+            <p><strong style="color:var(--amber)">Traffic peaks to 25k/day</strong> → Needs robust resources, possibly VPS depending on peak intensity</p>
             <p><strong style="color:var(--amber)">Critical backup/restore</strong> → Managed WordPress includes daily backups; critical news site may want more frequent</p>
           </div>
           <div class="theory-box">
-            <h4>🔍 The Staging Requirement</h4>
-            <p>Lars explicitly needs staging. This rules out Managed WordPress Start (no staging). He needs at minimum <strong style="color:var(--amber)">Managed WordPress Medium</strong>.</p>
-            <p>Medium vs Power: Lars has 1 production site (dagelijksnieuws.nl). Medium supports up to 5 sites — so Medium is more than sufficient for site count. But the traffic peaks (25k/day) may be a concern.</p>
+            <h4>🔍 Assessing the Requirements</h4>
+            <p>Lars needs 30GB of storage for his growing media library. This rules out Managed WordPress Start (amounting to 5GB). He needs at minimum <strong style="color:var(--amber)">Managed WordPress Medium</strong> (50GB).</p>
+            <p>Medium vs Power: Lars has 1 production site (dagelijksnieuws.nl). Medium supports up to 5 sites — so Medium is more than sufficient. But the traffic peaks (25k/day) may be a concern.</p>
           </div>
           <div class="theory-box">
             <h4>🖥 When Managed WordPress isn\'t Enough</h4>
@@ -1086,21 +1082,21 @@ const CASES = {
         subtitle: 'Map Lars\'s requirements to the right package.',
         questions: [
           {
-            q: 'Lars needs staging, multiple editors, daily backups, and handles 5-25k visitors/day. Which product line?',
+            q: 'Lars needs 30GB storage, multiple editors, daily backups, and handles 5-25k visitors/day. Which product line?',
             options: ['Webhosting Power', 'Managed WordPress', 'Managed WooCommerce', 'AI Website Builder'],
             correct: 1,
-            feedback: 'Correct. Managed WordPress is purpose-built for exactly this: editorial teams, staging environments, auto-updates, and WordPress-optimized performance. Webhosting Power works but lacks the WordPress-specific tooling.'
+            feedback: 'Correct. Managed WordPress is purpose-built for exactly this: editorial teams, auto-updates, and WordPress-optimized performance for handling traffic spikes. Webhosting Power works but lacks the WordPress-specific tooling.'
           },
           {
-            q: 'Managed WordPress Start has no staging. Medium supports staging and up to 5 sites. Lars has 1 site and needs staging. What\'s the minimum tier?',
+            q: 'Lars is evaluating Start vs Medium. He has 1 site but expects 25k visitors/day peaks and needs 30GB of storage. What\'s the minimum tier?',
             options: [
-              'Start — staging can be added as an addon',
-              'Medium — minimum tier that includes staging',
+              'Start — it can handle unlimited storage',
+              'Medium — provides 50GB storage and better resources',
               'Power — always go Power for news sites',
-              'He needs a VPS for staging'
+              'VPS — shared hosting never handles 25k peaks'
             ],
             correct: 1,
-            feedback: 'Correct. Staging is included from Medium onwards. Start doesn\'t include staging, so it\'s not an option given Lars\'s requirements. Medium is the minimum, and it easily supports 1 to 5 sites.'
+            feedback: 'Correct. Start only includes 5GB of storage, which doesn\'t meet his 30GB requirement. Medium provides 50GB and more resources to handle those traffic spikes.'
           },
           {
             q: 'Lars says peaks of 25,000 visitors/day sometimes still cause slowdowns on his current host. Should you recommend VPS over Managed WordPress?',
