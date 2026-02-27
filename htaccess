@@ -1,8 +1,5 @@
-<RequireAll>
-    Require all granted
-    
-    # List allowed IPs below
-    Require ip 45.82.189.7
-    Require ip 24.132.196.107
-
-</RequireAll>
+Order Deny,Allow
+Deny from all
+# List allowed IPs below
+Allow from 45.82.189.7
+Allow from 24.132.196.107
