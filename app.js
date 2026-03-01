@@ -780,8 +780,8 @@ const CASES = {
     ]
   },
 
-  7: {
-    tag: 'Case #7',
+  10: {
+    tag: 'Case #10',
     title: 'Black Friday Traffic Spike',
     xp: 200,
     tier: 2,
@@ -900,8 +900,8 @@ const CASES = {
     ]
   },
 
-  8: {
-    tag: 'Case #8',
+  7: {
+    tag: 'Case #7',
     title: 'The AI Website Builder Question',
     xp: 175,
     tier: 2,
@@ -936,22 +936,22 @@ const CASES = {
         id: 'theory',
         type: 'read',
         title: 'AI Website Builder: What It Is and When to Use It',
-        subtitle: 'A different product category — builder + hosting combined.',
+        subtitle: 'AI-assisted onboarding on top of core WordPress.',
         content: `
           <div class="theory-box">
             <h4>🤖 AI Website Builder — The Product</h4>
-            <p>Cloud86\'s <strong style="color:var(--amber)">AI Website Builder</strong> is a hosted website builder product — similar in concept to Wix or Squarespace, but Cloud86-hosted. It uses AI to help generate the initial site layout and content based on the customer\'s description.</p>
-            <p>Key features: drag-and-drop editor, AI content generation, SEO tools, contact forms, SSL included, Dutch-language support team.</p>
-            <p>It\'s a <strong style="color:var(--teal-bright)">self-contained product</strong> — it includes both the builder and the hosting. It does NOT require a separate Webhosting plan.</p>
+            <p>Cloud86\'s <strong style="color:var(--amber)">AI Website Builder</strong> is powered by Extendify and runs natively on WordPress. It uses AI to generate an initial, tailored site layout and content, providing a massive head start.</p>
+            <p>Key features: AI block patterns, Draft AI for content generation, AI Copilot, SEO tools, contact forms, and all the standard benefits of Cloud86 hosting.</p>
+            <p>Unlike closed systems like Wix or Squarespace, this is a <strong style="color:var(--teal-bright)">WordPress foundation</strong>. They get the ease of an AI builder without losing the flexibility to use standard WordPress plugins later.</p>
           </div>
           <div class="theory-box">
             <h4>✅ Right fit for the AI Website Builder</h4>
-            <p>Recommend it when: non-technical user, simple presentation site, no complex CMS needs, no specific WordPress requirements, budget-focused, wants to be up and running quickly.</p>
-            <p><strong style="color:var(--red)">Not suitable when:</strong> the customer needs WordPress-specific plugins, custom code, a webshop with many products (WooCommerce), or wants full hosting control.</p>
+            <p>Recommend it when: non-technical user, simple presentation site, budget-focused, wants to be up and running quickly but might want to expand their site\'s capabilities in the future.</p>
+            <p><strong style="color:var(--red)">Not suitable when:</strong> the customer is an experienced developer who wants to build a custom theme from scratch and doesn\'t want AI-generated starter concepts or onboarding tools.</p>
           </div>
           <div class="clue-box">
             <span class="clue-icon">💡</span>
-            <div class="clue-text"><strong>For Nadia:</strong> Portfolio site, contact form, SEO, non-technical, budget-conscious. This is exactly the AI Website Builder use case. She doesn\'t need WordPress or a full hosting plan — she needs something she can manage herself without technical knowledge.</div>
+            <div class="clue-text"><strong>For Nadia:</strong> Portfolio site, contact form, SEO, non-technical, budget-conscious. She doesn\'t need to learn WordPress from scratch — the AI builder sets it all up for her, but she still owns a highly extensible WordPress site.</div>
           </div>
         `
       },
@@ -975,24 +975,24 @@ const CASES = {
           {
             q: 'Nadia asks: "Can I add an online shop later to sell photo prints?" How do you answer?',
             options: [
-              'Yes, the AI Website Builder supports full WooCommerce integration',
-              'The AI Website Builder has basic e-commerce capabilities for simple product listings, but for a proper webshop she\'d likely need to migrate to Managed WooCommerce later',
-              'No, the AI Website Builder can never include e-commerce',
-              'Yes, she can add unlimited products directly in the builder'
+              'Yes, because the AI Website Builder is built entirely on WordPress, she can easily install WooCommerce whenever she\'s ready.',
+              'The AI Website Builder has basic e-commerce capabilities, but she cannot use WooCommerce.',
+              'No, the AI Website Builder is a closed system that does not support e-commerce.',
+              'Yes, but she will have to pay Cloud86 developers to completely rebuild her site.'
             ],
-            correct: 1,
-            feedback: 'Correct. Be transparent about limitations. The AI Website Builder supports basic sales, but a growing WooCommerce shop would eventually need proper WooCommerce hosting. Set the right expectations upfront — if she plans to sell many products, starting with Managed WooCommerce Start might be better long-term despite the higher initial complexity.'
+            correct: 0,
+            feedback: 'Correct! Because the AI Website Builder runs natively on WordPress, Nadia is never locked out of adding plugins like WooCommerce. She can start simple with the AI builder and scale into a full webshop later without migrating.'
           },
           {
-            q: 'Another customer is a developer who wants full control over their WordPress site, custom plugins, and SSH access. Should you recommend the AI Website Builder?',
+            q: 'Another customer is an experienced developer building a highly custom theme from scratch. Should they use the AI Website Builder?',
             options: [
-              'Yes — it\'s the easiest option for any website',
-              'No — the AI Website Builder is a managed builder product; developers need Managed WordPress or a VPS where they have technical access',
-              'Yes — developers can use the AI builder and export code',
-              'Only if they don\'t need SSH access'
+              'Yes — it saves them time writing code.',
+              'No — they wouldn\'t want the AI-generated starter content and onboarding; they should just use standard Webhosting or Managed WordPress for a blank slate.',
+              'Yes — it exports clean React code.',
+              'No — the AI Website Builder doesn\'t give them access to the server.'
             ],
             correct: 1,
-            feedback: 'Correct. The AI Website Builder is for non-technical users who want simplicity. A developer who needs SSH, custom plugins, and technical control needs Managed WordPress (which provides a full WordPress environment) or a Managed VPS. Never recommend the builder to someone who needs server-level access.'
+            feedback: 'Correct. While the AI builder gives full WordPress access, an experienced developer building from scratch doesn\'t need AI starter patterns and onboarding flows. Standard hosting is better for "blank slate" custom development.'
           }
         ]
       },
@@ -1005,21 +1005,21 @@ const CASES = {
           title: 'Scenario: The in-between customer',
           text: 'A restaurant owner wants a website: menu, photos, reservation form. He\'s somewhat technical — he used WordPress once years ago but found it overwhelming. He doesn\'t want to spend much. What\'s your recommendation, and how do you frame the tradeoffs?',
           answer: `
-            <strong>Two valid paths — present both and let him choose:</strong><br><br>
-            <strong>Option 1: AI Website Builder</strong><br>
-            Easier to manage, no WordPress complexity, includes reservation forms. Limitations: less flexibility, platform-locked, limited customization. Better for: someone who wants it done and doesn\'t want to think about it.<br><br>
+            <strong>This is no longer an "either/or" decision — it's about onboarding:</strong><br><br>
+            Both paths lead to WordPress, but they start differently.<br><br>
+            <strong>Option 1: AI Website Builder (Recommended)</strong><br>
+            It guides him step-by-step. The AI sets up the initial structure, menu layouts, and suggests imagery. Once done, he still has a full WordPress site. It removes the overwhelming "blank page" problem he experienced years ago.<br><br>
             <strong>Option 2: Managed WordPress Start</strong><br>
-            More flexibility, thousands of plugins (reservation plugins, menu plugins), future-proof. But: requires some WordPress familiarity. Given his past WordPress experience, this might not be as scary as he thinks.<br><br>
-            <strong>Recommendation framing:</strong> "If you want to set it up once and never think about it, the AI Builder is easier. If you want more control and flexibility, WordPress with managed hosting means updates happen automatically — it\'s much easier than the WordPress you tried before."<br><br>
-            Let the customer decide based on how involved they want to be.
+            Provides a completely blank WordPress installation. He\'d have to find a theme, build the pages manually, and configure plugins from scratch.<br><br>
+            <strong>Recommendation framing:</strong> "Our AI Website Builder is actually built on WordPress! It uses AI to help you build the first version of your site so you don\'t have to start from scratch. If you want to add complex plugins later, you still can."
           `
         }
       }
     ]
   },
 
-  9: {
-    tag: 'Case #9',
+  8: {
+    tag: 'Case #8',
     title: 'The High-Output Blog',
     xp: 200,
     tier: 2,
@@ -1134,8 +1134,8 @@ const CASES = {
     ]
   },
 
-  10: {
-    tag: 'Case #10',
+  9: {
+    tag: 'Case #9',
     title: 'Leaving Big Tech for Email',
     xp: 225,
     tier: 2,
