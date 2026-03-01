@@ -1180,7 +1180,7 @@ const CASES = {
           <div class="theory-box">
             <h4>⚠️ Migration Reality: Email History</h4>
             <p>Migrating email history from Microsoft 365 (Exchange) to Cloud86 (IMAP/POP3-based) is technically possible but has important caveats:</p>
-            <p><strong style="color:var(--amber)">What can be migrated:</strong> Email folders and messages can be moved using IMAP migration tools (e.g., imapsync, Outlook\'s export/import, or third-party migration services).</p>
+            <p><strong style="color:var(--amber)">What can be migrated:</strong> Email folders and messages can be moved, but <strong style="color:var(--red)">Cloud86 does not do this for them</strong>. The customer must migrate this themselves using the .pst method in Outlook or third-party tools.</p>
             <p><strong style="color:var(--amber)">What\'s more complex:</strong> Calendar data, contacts stored in Microsoft\'s format, shared calendars, and Teams integrations don\'t transfer cleanly to standard IMAP hosting.</p>
             <p><strong style="color:var(--red)">Important limitation:</strong> Cloud86 email is IMAP-based (Plesk/Roundcube). It doesn\'t include Microsoft-style collaboration features (shared calendars, Teams, SharePoint). If the customer relies on these, they\'re losing significant functionality.</p>
           </div>
@@ -1205,18 +1205,18 @@ const CASES = {
               'Managed VPS — for Microsoft 365 compatibility'
             ],
             correct: 1,
-            feedback: 'Correct. Email Hosting Medium (50 mailboxes) is the right fit for 12 mailboxes with no website hosting. Start (10 mailboxes) technically fits but is very tight — a poor recommendation for a business. Webhosting Medium works but includes web server resources she doesn\'t need and costs more.'
+            feedback: 'Correct. Email Hosting Medium (50 mailboxes) is the right fit for 12 mailboxes with no website hosting. Start (10 mailboxes) technically fits but is very tight — a poor recommendation for a business. Webhosting Medium works but includes web server resources she doesn\'t need and costs more.<br><br><em>*Note: We cannot migrate from Microsoft 365 to IMAP for the customer. The customer can do this themselves using the .pst method.</em>'
           },
           {
             q: 'Iris asks: "Can we keep all our email history from Microsoft 365?" What\'s the most accurate answer?',
             options: [
               'Yes, Cloud86 migrates all email including calendar and contacts automatically',
-              'Email messages can be migrated via IMAP tools, but Microsoft-specific features like shared calendars won\'t transfer to standard email hosting',
+              'Email messages can be migrated, but the customer must do it themselves (using the .pst method). Microsoft-specific features like shared calendars won\'t transfer',
               'No — all existing email will be lost during migration',
               'Yes, Cloud86 has a Microsoft 365 migration tool that preserves everything'
             ],
             correct: 1,
-            feedback: 'Correct. Be accurate: email messages (inbox, folders, sent items) can be migrated using IMAP migration. But Microsoft-specific collaboration features (shared calendars, contacts in Exchange format, Teams) don\'t exist in standard IMAP email hosting. Setting the right expectation before migration prevents post-migration complaints.'
+            feedback: 'Correct. Be accurate: Cloud86 cannot migrate from Microsoft 365 to IMAP for the customer. The customer must perform the migration themselves using the .pst method. Furthermore, Microsoft-specific collaboration features (shared calendars, contacts in Exchange format, Teams) don\'t exist in standard IMAP email hosting. Setting the right expectation prevents complaints.'
           },
           {
             q: 'Iris\'s team uses shared calendars in Microsoft 365 daily. You\'re about to recommend Email Hosting Medium. What should you do?',
